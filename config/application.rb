@@ -64,5 +64,8 @@ module SampleApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # FIX TO ALLOW ASSETS PRECOMPILE SEE http://stackoverflow.com/questions/8997226/rake-assetsprecompile-attempting-to-connect-to-database/8997640#8997640
+    config.assets.initialize_on_precompile = false
   end
 end
