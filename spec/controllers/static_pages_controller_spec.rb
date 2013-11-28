@@ -5,7 +5,7 @@ describe "Static pages" do
   describe "Home page" do
 
     it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
+      visit '/home'
       page.should have_content('Sample App')
     end
   end
@@ -13,7 +13,7 @@ describe "Static pages" do
   describe "Help page" do
 
     it "should have the content 'Help'" do
-      visit '/static_pages/help'
+      visit '/help'
       page.should have_content('Help')
     end
   end
