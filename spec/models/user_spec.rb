@@ -29,6 +29,15 @@ describe User do
 	it { should be_valid }
 	it { should_not be_admin }
 	
+	
+	describe "accesible attributes" do 
+		it "should not allow acces to :admin" do 
+			expect do 
+				User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar", admin: true)
+			end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)	
+		end
+	end
+	
 	describe "with admin attributes set to true" do 
 		before do 
 			@user.save!
@@ -36,6 +45,7 @@ describe User do
 		end
 		
 		it { should be_admin }
+	end
 	
 	describe "remember token" do 
 		before { @user.save }
